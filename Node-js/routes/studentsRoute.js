@@ -1,24 +1,29 @@
 const express = require('express');
-const routes = express.Router();
+const studentscontroller = require('../Controllers/studentscontroller');
+const router = express.Router();
 
-// get all students
-routes.get('/students', (req,res)=>{
-    res.send({type:'Get Request'});
+//  GET all students
+ router.get('/getAllStudent',studentscontroller.getAllStudents);
+
+
+ router.post('/Addstudent',studentscontroller.AddStudent);
+
+ router.put('/updatestudent/:id',studentscontroller.updateStudent);
+
+
+ router.delete('/:id',studentscontroller.deleteStudent);
+
+
+//  PUT - Update a student by ID
+router.put('/students/:id', (req, res) => {
+    res.send({ type: 'Update Request' });
 });
 
-// Add student
-routes.post('/students', (req,res)=>{
-    res.send({type:'Post Request'});
+// DELETE - Delete a student by ID
+router.delete('/students/:id', (req, res) => {
+    res.send({ type: 'Delete Request' });
 });
 
-// get student
-routes.put('/students/:id', (req,res)=>{
-    res.send({type:'Update Request'});
-});
+module.exports = router;
 
-// update student
-routes.delete('/students:/id', (req,res)=>{
-    res.send({type:'Delete Request'});
-});
 
-module.exports = routes;
