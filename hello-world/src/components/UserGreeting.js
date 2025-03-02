@@ -6,14 +6,48 @@ class UserGreeting extends Component {
         super(props)
     
         this.state = {
-             
+          isLoggedIn: false   //you canchange to true 
         }
     }
     
   render() {
+
+    // THIRD APPROACH  using itinerary approach
+
     return (
-      <div>UserGreeting</div>
+      this.state.isLoggedIn ? (
+      <div>Welcome James</div>
+      ) : (
+      <div>Welcome Guest</div>
     )
+    )
+
+    // SECOND APPROACH
+
+    // DECLARING USING A VARIABLE 
+    // let message
+    // if (this.state.isLoggedIn) {
+    //   message = <div>Welcome James</div>
+    // } else {
+    //   message = <div>Welcome Guest</div>
+    // }
+
+    // return <div>{message}</div>
+
+
+
+    // FIRST APPROACH
+
+    // DECLARING USING IF STATEMENTS
+    // if (this.state.isLoggedIn) {
+    //   return (
+    //     <div>Welcome James</div>
+    //   )
+    // } else{
+    //   return (
+    //     <div>Welcome Guest</div>
+    //   )
+    // }
   }
 }
 
