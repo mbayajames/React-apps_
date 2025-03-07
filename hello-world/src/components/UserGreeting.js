@@ -12,15 +12,19 @@ class UserGreeting extends Component {
     
   render() {
 
-    // THIRD APPROACH  using itinerary approach
+    // FORTH APPROACH - short circuit operator
+     return this.state.isLoggedIn && <div>Welcome James</div>
+     
 
-    return (
-      this.state.isLoggedIn ? (
-      <div>Welcome James</div>
-      ) : (
-      <div>Welcome Guest</div>
-    )
-    )
+    // THIRD APPROACH  using itinerary approach (condition operator)
+
+    // return (
+    //   this.state.isLoggedIn ? (
+    //   <div>Welcome James</div>
+    //   ) : (
+    //   <div>Welcome Guest</div>
+    // )
+    // )
 
     // SECOND APPROACH
 
